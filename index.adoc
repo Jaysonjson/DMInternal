@@ -122,7 +122,7 @@ If you don't know how to make a mod and result to a Server Datapack and Resource
 .*Pulses*
 [%collapsible]
 =======
-TardisPulses controll how the Demat/Remat animation look like.
+TardisPulses control how the Demat/Remat animation look like.
 The *TardisBlockEntity* contains a float called "*pulses*", this float is used to calculate the alpha during Animation. +
 For the lights, *lightPulses* exist.
 The pulse ID is stored inside TardisData, so a player can choose which Pulse they want to use. +
