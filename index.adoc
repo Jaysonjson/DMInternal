@@ -219,6 +219,8 @@ Red is the X Axis, while Blue denote the Z Axis. Each square is a chunk. +
 If designing a canon interior (one that has been in the show), you should aim to keep the styling consistent with the other canon interiors already in the mod. +
 
 If designing a custom interior, then you have free rein. It can be as expensive as you want, but it has to be obtainable in survival. This means no player heads or bedrock-equivalent blocks. +
+
+Redstone contraptions should not be part of the interior as they may break when generated. +
 ====
 .**Generated Structures**
 [%collapsible]
