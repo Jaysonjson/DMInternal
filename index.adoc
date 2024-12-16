@@ -1,5 +1,6 @@
-= Dalek Mod 1.21.3 Internal Wiki
-Internal Stuff for Addon Creators and DM Dev Team regarding Dalek Mod Fabric 1.21.3
+:version: 1.21.4
+= Dalek Mod {version} Internal Wiki
+Internal Stuff for Addon Creators and DM Dev Team regarding Dalek Mod Fabric {version}
 Code Sections managed by Jayson; Style by Ginger
 :source-highlighter: coderay
 
@@ -15,7 +16,7 @@ DM Assets and Data can be extracted from the .jar file or downloaded from here: 
 .**Builder**
 [%collapsible]
 ====
-Dalek Mod 1.21.3 will use "_TARDIS Builders_", which handle how the TARDIS should be placed and destroyed in the world.
+Dalek Mod {version} will use "_TARDIS Builders_", which handle how the TARDIS should be placed and destroyed in the world.
 For example, during demat the TARDIS Builder will remove the TARDIS Blocks and during remat it will place the blocks again with the required data.
 
 TARDIS Builders are not *Datapack* driven but done via *Java Code*. +
