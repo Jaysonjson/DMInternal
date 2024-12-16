@@ -160,7 +160,7 @@ Custom Layers can be added in *code* by using the *TardisRenderLayerCallback* ev
 Something which is TODO is a System that allows to override the layer array from existing exteriors. +
 Reason for that is, if you have 2 addons that add new layers and both want to add them to default exteriors, one will override the other one. +
 You can do it via code by getting the *ClientTardisExterior* class from the *TardisExterior Registry* using its ID and add the layer, but I will also add an option to do it via resourcepacks. +
-Layers are checked inside the TardisBlockEntities tick, to add a custom check for your layer or to extend our checks for custom mod blocks/biomes you can make new entries into data/your_namespace/layer/
+Layers are checked inside the TardisBlockEntities tick, to add a custom check for your layer or to extend our checks for custom mod blocks/biomes you can make new entries into *data/your_namespace/tardis/layer/*
 
 [source,json]
 ----
