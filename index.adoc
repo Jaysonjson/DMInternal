@@ -172,7 +172,7 @@ Layers are checked inside the TardisBlockEntities tick, to add a custom check fo
 ----
 **type** represents the type to check, the types can be either **block** or **biome**. +
 **object** is the object to check, so either a blockId or a biomeId. +
-**layer** layer will be the layer to apply. +
+**layer** will be the layer to apply. +
 =======
 == Sonics
 
