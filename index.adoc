@@ -184,8 +184,8 @@ Layers are checked inside the TardisBlockEntities tick, to add a custom check fo
   "layer": "snow_map"
 }
 ----
-**type** represents the type to check, the types can be either **block** or **biome**. +
-**object** is the object to check, so either a blockId or a biomeId. +
+**type** represents the type to check, the types can be either **block**, **biome** or **weather**. +
+**object** is the object to check, so either a blockId or a biomeId or a weather type (rain, snow). +
 **layer** will be the layer to apply. +
 =======
 == Sonics
