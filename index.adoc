@@ -1,7 +1,10 @@
-= Dalek Mod 1.21.3 Internal Wiki
-Internal Stuff for Addon Creators and DM Dev Team regarding Dalek Mod Fabric 1.21.3
+:version: 1.21.4
+= Dalek Mod {version} Internal Wiki
+Internal Stuff for Addon Creators and DM Dev Team regarding Dalek Mod Fabric {version}
 Code Sections managed by Jayson; Style by Ginger
 :source-highlighter: coderay
+
+image::ginger_moment.png[alt="Ginger Moment", width=50%, height=50%]
 
 == Addons
 Addons for Dalek Mod are allowed, but we would like that any Addon follows these Guidelines and also these special cases: + 
@@ -13,7 +16,7 @@ DM Assets and Data can be extracted from the .jar file or downloaded from here: 
 .**Builder**
 [%collapsible]
 ====
-Dalek Mod 1.21.3 will use "_TARDIS Builders_", which handle how the TARDIS should be placed and destroyed in the world.
+Dalek Mod {version} will use "_TARDIS Builders_", which handle how the TARDIS should be placed and destroyed in the world.
 For example, during demat the TARDIS Builder will remove the TARDIS Blocks and during remat it will place the blocks again with the required data.
 
 TARDIS Builders are not *Datapack* driven but done via *Java Code*. +
@@ -98,17 +101,10 @@ The jsons for exteriors are like for Datapacks located inside *assets/your_names
 This is an example exterior json. +
 Every json entry is self-explanitory again, but I will talk a bit more about the *layers*: +
 Layers are what the *snowmaps* used to be in Dalek Mod 1.16.5 and you can add it using the Layers ID and then a path to the texture. +
-Dalek Mod 1.21.3+ has these default Render Layers: +
-- *snow_map* +
-- *light_map* +
-- *cherry_map* +
-- *sculk_map* +
-- *ash_map* +
-
-Custom Layers can be added in *code* by using the *TardisRenderLayerCallback* event which invokes inside the TardisRenderer constructor. +
 Something which is TODO is a System that allows to override the layer array from existing exteriors. +
 Reason for that is, if you have 2 addons that add new layers and both want to add them to default exteriors, one will override the other one. +
-You can do it via code by getting the *ClientTardisExterior* class from the *TardisExterior Registry* using its ID and add the layer, but I will also add an option to do it via resourcepacks.
+You can do it via code by getting the *ClientTardisExterior* class from the *TardisExterior Registry* using its ID and add the layer, but I will also add an option to do it via resourcepacks. +
+For more information about layers, see the Layer section
 =====
 .Server-Client mismatch
 [%collapsible]
@@ -117,6 +113,81 @@ When a Player joins, the Server will send all of its Exteriors to the Client, if
 If you don't know how to make a mod and result to a Server Datapack and Resourcepack, the Clients will _need_ your Resourcepack in order to Render the TARDIS Exterior, otherwise its an ID Mismatch.
 =====
 ====
+.*Pulses*
+[%collapsible]
+=======
+TardisPulses control how the Demat/Remat animation look like.
+The *TardisBlockEntity* contains a float called "*pulses*", this float is used to calculate the alpha during Animation. +
+For the lights, *lightPulses* exist.
+The pulse ID is stored inside TardisData, so a player can choose which Pulse they want to use. +
+
+To add a new TardisPulse, you need to implement *ITardisPulse*
+
+[source,java]
+----
+public class DefaultTardisPulse implements ITardisPulse {
+    @Override
+    public void pulse(TardisBlockEntity tardisBlockEntity, TardisData data, long tickTime, TardisBuilder builder, World world, BlockPos pos) {
+        defaultHandler(tardisBlockEntity, data, tickTime, builder, world, pos);
+
+        if(tardisBlockEntity.getState() != TardisState.NEUTRAL) {
+            tardisBlockEntity.pulses = (float) (1 - tardisBlockEntity.dematTime + MathHelper.cos(tardisBlockEntity.dematTime * 3.141592f * 10) * 0.25f * MathHelper.sin(tardisBlockEntity.dematTime * 3.141592f));
+            tardisBlockEntity.lightPulses = tardisBlockEntity.pulses;
+        }
+    }
+}
+----
+Example Pulse class. +
+Your custom Pulse can be registered using our Registry *DMRegistry.TARDIS_PULSES*: +
+[source,java]
+----
+Registry.register(DMRegistry.TARDIS_PULSES, id, pulse_class);
+----
+=======
+.*Layers*
+[%collapsible]
+=======
+Dalek Mod {version}+ has these default Render Layers: +
+- *snow_map* +
+- *light_map* +
+- *cherry_map* +
+- *sculk_map* +
+- *ash_map* +
+- *sand_map* +
+- *red_sand_map* +
+- *mossy_map* +
+- *pale_mossy_map* +
+- *mud_map* +
+Custom Layers can be added inside *data/your_namespace/tardis/layer* +
+[source,json]
+----
+[
+  "snow_map",
+  "ash_map",
+  "cherry_map",
+  "mossy_map",
+  "pale_mossy_map",
+  "sand_map",
+  "red_sand_map",
+  "sculk_map",
+  "mud_map"
+]
+----
+The data will be sent to the client once they join. +
+Layers are checked inside the TardisBlockEntities tick, to add a custom check for your layer or to extend our checks for custom mod blocks/biomes you can make new entries into *data/your_namespace/tardis/layer/checks*
+
+[source,json]
+----
+{
+  "type": "block",
+  "object": "minecraft:snow_block",
+  "layer": "snow_map"
+}
+----
+**type** represents the type to check, the types can be either **block**, **biome** or **weather**. +
+**object** is the object to check, so either a blockId or a biomeId or a weather type (rain, snow). +
+**layer** will be the layer to apply. +
+=======
 == Sonics
 
 == Styling
@@ -186,6 +257,8 @@ Red is the X Axis, while Blue denote the Z Axis. Each square is a chunk. +
 If designing a canon interior (one that has been in the show), you should aim to keep the styling consistent with the other canon interiors already in the mod. +
 
 If designing a custom interior, then you have free rein. It can be as expensive as you want, but it has to be obtainable in survival. This means no player heads or bedrock-equivalent blocks. +
+
+Redstone contraptions should not be part of the interior as they may break when generated. +
 ====
 .**Generated Structures**
 [%collapsible]
