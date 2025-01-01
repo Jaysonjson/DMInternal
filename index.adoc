@@ -197,4 +197,4 @@ Simple structures, such as Thal houses (from 1.16), should aim to utilise the bl
 Larger structures may utilise a wider variety, but not go over the top. The structures should not become a resource farm (Dungeons are the exception). +
 
 If you have to use rare blocks, use them in moderation, don't allow it to become the focus of the structure. +
-
+====
