@@ -10,8 +10,21 @@ image::ginger_moment.png[alt="Ginger Moment", width=50%, height=50%]
 Addons for Dalek Mod are allowed, but we would like that any Addon follows these Guidelines and also these special cases: + 
 - Your Addon should not use the **dalekmod** modid when registering stuff +
 - If your addon is both client and server (**common**) please disable the DMU Button in the Titlescreen +
-DM Assets and Data can be extracted from the .jar file or downloaded from here: https://jaysonjson.github.io/DMInternal/assets.zip
+DM Assets and Data can be extracted from the .jar file or downloaded from here: https://jaysonjson.github.io/DMInternal/assets.zip +
 
+.**Addon Packs**
+[%collapsible]
+=====
+Addon Packs are extensions for Dalek Mod which basically combine Datapacks and Resourcepacks into a single file. +
+They are .zip files which can have these extensions: +
+- .zip +
+- .dma +
+- .dmaddon +
+but .dma is preferred, so you know that it is a DM Addon. +
+An example Addon can be downloaded here: +
+https://jaysonjson.github.io/DMInternal/example_addon.zip
+
+=====
 == TARDIS
 .**Builder**
 [%collapsible]
