@@ -5,7 +5,7 @@ Code Sections managed by Jayson; Style by Ginger
 :source-highlighter: coderay
 
 image::ginger_moment.png[alt="Ginger Moment", width=50%, height=50%]
-
+Want to edit this Page? Pull Requests are always welcome. https://github.com/Jaysonjson/DMInternal/ +
 == Addons
 Addons for Dalek Mod are allowed, but we would like that any Addon follows these Guidelines and also these special cases: + 
 - Your Addon should not use the **dalekmod** modid when registering stuff +
