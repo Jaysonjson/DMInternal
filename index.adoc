@@ -287,7 +287,8 @@ There are three types of music used in the mod, namely title screen, ambient and
 [%collapsible]
 =====
 Title screen tracks have fewer rules than their ambient counterparts, but more than music discs.
-These will usaully be arrangements of the Doctor Who theme, but other themes (perhaps themes from various Doctor Who spin-offs) may be included as well.
+These will usaully be arrangements of the Doctor Who theme, but other themes (perhaps themes from various Doctor Who spin-offs) may be included as well. +
+
 These will usually be *upbeat* (especially compared to the ambient tracks) and are free in their intrumentation. +
 =====
 .**Ambient tracks**
@@ -295,6 +296,7 @@ These will usually be *upbeat* (especially compared to the ambient tracks) and a
 =====
 Ambient tracks should be mostly consistent in both *feel* (to use a rather vague term) and *intrumentation* relative to other ambient tracks from the same dimension.
 Having said that, each track should be distinct enough from one another that it is possible to recognise which one is which when playing in game. +
+
 These are, as the name implies, *ambient*, and should not distract the player from what they're doing, but rather enhance it.
 The vanilla tracks create a sense of importance to moments that would otherwise be dull, making said moments more memorable; we should be striving to achieve the same affect.
 =====
@@ -302,6 +304,7 @@ The vanilla tracks create a sense of importance to moments that would otherwise 
 [%collapsible]
 =====
 Music discs have the fewest rules of the three types of music, being able to be almost anything. They can be fast or slow, they can have variable dynamics or stay consistent the entire way through, and they are entirely free in their intrumentation (or could be almost entirely devoid of "intruments", such as the vanilla track 11). They do, as can be guessed, need their own unique music disc (clue's in the name) and these should list the track's title *and composer*. +
+
 For certain special music discs, they may have particular ways of obtaining them. You may wish to keep this "special" aspect in mind when composing/arranging said track.
 =====
 ====
