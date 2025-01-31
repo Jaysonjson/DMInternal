@@ -220,14 +220,17 @@ If there is nothing similar in either the mod or the base game, then and *only* 
 
 If making a new asset which is in a new art style, either the added asset should be adapted to better fit the style, or *all* previous assets should be updated to the new style. +
 ====
-.**TARDIS Exteriors**
+.**Asset Creation**
 [%collapsible]
 ====
+.**TARDIS Exteriors**
+[%collapsible]
+=====
 These are almost certainly going to be the most common asset; any asset creator could theoretically turn whatever they wanted into a feasible TARDIS exterior to use in the mod. There are, however, some rules that should generally make all exteriors feel homogeneous. +
 
 .**Details**
 [%collapsible]
-=====
+======
 Any police box model with roof signs should typically have these signs as two seperate cubes; one for the front and back and one for the sides. This, of course, does not apply if the roof signs are a differerent shape from the typical designs, but most crucially (unless somehow recreating a police box with this particular feature) the signs should *not* be merged into one single cube. Exceptions may of course true for a "police box" that is supposed to be something "mimicking" a police box (See the Valentine's police box from 1.16.5, which is mostly made from foodstuffs).
 
 While, in general, any 3D detail that *could* be represented within the texture of a larger cube *should* be, there are some cases where TARDIS exteriors are allowed to spend a few extra cubes. The most notable areas for this that appear on most police boxes are handles and lamps.
@@ -235,19 +238,19 @@ While, in general, any 3D detail that *could* be represented within the texture 
 Handles (unless *very* small) should be modelled, usually with a single cube textured on its front, top and bottom faces. These should usually only extend 1 *or* half a pixel out from the door it is attatched to. *NEVER MODEL THE LOCK*.
 
 The lamp can now be whatever size it needs to be (as long as it is roughly in proportion with the test of the box). Generally, lamp pillars should be represented by planes (usually each rotated 45 degrees in either direction). *Despite* this newfound freedom (at least compared to 1.16.5's models) details that *can* become a single cube *should still* be represented as such if possible.
-=====
+======
 
 .**Door Size**
 [%collapsible]
-=====
+======
 In general, if the doors on any particular exterior can be 16*32 pixels (the same width and height of a vanilla door), they should be unless there's a very specific reason. For example, most police boxes should have two 8*32 doors (that together make up the full 16*32), but some oddly shaped (see the Halloween police box from 1.16.5) or *dramatically* scaled (see the teeny tiny police box, also from 1.16.5) are allowed to have very different doors *because without them their designs would not be practical*. Even if trying to replicate, for example, a canon police box prop that is noticably smaller or larger in real life than other similar police boxes already in the mod, it is *ideal* for the doors to stay the same size (making sure the rest of the box is scaled proportionately). +
 
-With Police Boxes specifically (although this may apply to other types of TARDIS exterior), this does *not* mean that the space between the pillars, base and roof signs (where the doors sit) must be 16*32 pixels, as some police boxes may have an 'overhang' that sits between the doors and roof signs (such as the 2018 police box).
-=====
+With police boxes specifically (although this may apply to other types of TARDIS exterior), this does *not* mean that the space between the pillars, base and roof signs (where the doors sit) must be 16*32 pixels, as some police boxes may have an 'overhang' that sits between the doors and roof signs (such as the 2018 police box).
+======
 
 .**Shading**
 [%collapsible]
-=====
+======
 All TARDIS Exteriors should be shaded in such a way that north- and southwards facing parts of the model are generally lighter than east- and westwards facing parts. The term "parts" is used here rather than "faces" as some areas that should be shaded darker for this rule (such as the standard tapered roof of most police boxes) are not *actually* facing different directions, but are instead being shaded to mimic this direction. +
 
 Any and all indents/extrusions that are suggested by the texture alone (i.e. not actually in the model, such as police box panels) should be shaded as if light is coming from the top left. This *ignores* face direction; do *not* have light coming from different directions on differerent sides of the model. +
@@ -255,6 +258,7 @@ Any and all indents/extrusions that are suggested by the texture alone (i.e. not
 Do not leave all shading up to the model; In some cases you may wish to make an area that should be in shadow darker (despite the fact that this should already be done by in-game lighting) to properly define these areas. Similarly highlights should be included in the model, especially if the material is supposed to be shiny. +
 
 Remember that anything that is supposed to glow should be included in a seperate lightmap texture. Although it shouldn't matter in most cases, all pixels included in the lightmap should appear identical in the base texture. This is to ensure that if, for whatever reason, the game does not load the lightmap, the model still appears intact.
+======
 =====
 ====
 .**Exceptions**
