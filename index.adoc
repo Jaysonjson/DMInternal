@@ -251,7 +251,7 @@ With police boxes specifically (although this may apply to other types of TARDIS
 .**Shading**
 [%collapsible]
 ======
-All TARDIS Exteriors should be shaded in such a way that north- and southwards facing parts of the model are generally lighter than east- and westwards facing parts. The term "parts" is used here rather than "faces" as some areas that should be shaded darker for this rule (such as the standard tapered roof of most police boxes) are not *actually* facing different directions, but are instead being shaded to mimic this direction. +
+All TARDIS Exteriors with slanted roofs should be shaded in such a way that the parts of the roof that would face forwards or backwards (relative to the exterior) are lighter than those that would face to the sides. +
 
 Any and all indents/extrusions that are suggested by the texture alone (i.e. not actually in the model, such as police box panels) should be shaded as if light is coming from the top left. This *ignores* face direction; do *not* have light coming from different directions on differerent sides of the model. +
 
