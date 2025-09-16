@@ -1,10 +1,10 @@
-:version: 1.21.4
+:version: 1.21.8
 = Dalek Mod {version} Internal Wiki
 Internal Stuff for Addon Creators and DM Dev Team regarding Dalek Mod Fabric {version}
-Code Sections managed by Jayson; Style by Ginger
+Code Sections managed by Jayson; Style/Sound Sections managed by Ginger
 :source-highlighter: coderay
 
-image::ginger_moment.png[alt="Ginger Moment", width=50%, height=50%]
+image::dm_interal_wiki_logo.png[alt="DMInternalWiki Logo", width=50%, height=50%]
 Want to edit this Page? Pull Requests are always welcome. https://github.com/Jaysonjson/DMInternal/ +
 
 == Addons
@@ -237,7 +237,7 @@ While, in general, any 3D detail that *could* be represented within the texture 
 
 Handles (unless *very* small) should be modelled, usually with a single cube textured on its front, top and bottom faces. These should usually only extend 1 *or* half a pixel out from the door it is attatched to. *NEVER MODEL THE LOCK*.
 
-The lamp can now be whatever size it needs to be (as long as it is roughly in proportion with the test of the box). Generally, lamp pillars should be represented by planes (usually each rotated 45 degrees in either direction). *Despite* this newfound freedom (at least compared to 1.16.5's models) details that *can* become a single cube *should still* be represented as such if possible.
+The lamp can now be whatever size it needs to be (as long as it is roughly in proportion with the rest of the box). Generally, lamp pillars should be represented by planes (usually each rotated 45 degrees in either direction). *Despite* this newfound freedom (at least compared to 1.16.5's models) details that *can* become a single cube *should still* be represented as such if possible.
 ======
 
 .**Door Size**
