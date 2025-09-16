@@ -4,7 +4,7 @@ Internal Stuff for Addon Creators and DM Dev Team regarding Dalek Mod Fabric {ve
 Code Sections managed by Jayson; Style/Sound Sections managed by Ginger
 :source-highlighter: coderay
 
-image::dm_interal_wiki_logo.png[alt="DMInternalWiki Logo", width=50%, height=50%]
+image::dm_internal_wiki_logo.png[alt="DMInternalWiki Logo", width=50%, height=50%]
 Want to edit this Page? Pull Requests are always welcome. https://github.com/Jaysonjson/DMInternal/ +
 
 == Addons
