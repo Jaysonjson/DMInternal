@@ -202,7 +202,74 @@ Layers are checked inside the TardisBlockEntities tick, to add a custom check fo
 **object** is the object to check, so either a blockId or a biomeId or a weather type (rain, snow). +
 **layer** will be the layer to apply. +
 =======
-== Sonics
+== Panels
+
+.**Panel Variants**
+[%collapsible]
+====
+Panel Variants must be defined on the client (resourcepack) and on the server (datapack). +
+
+.Resourcepack Side - Client
+[%collapsible]
+=====
+a variant can be created inside assets/[id]/tardis/panel/variants/. +
+You can create subfolders. +
+The json will look like this: +
+[source,json]
+----
+{
+  "target": "dalekmod:monitor",
+  "variant": "default",
+  "texture": "dalekmod:textures/block/panel/monitor/monitor.png",
+  "model": "dalekmod:geckolib/block/panel/monitor/monitor.geo.json",
+  "animation": "dalekmod:geckolib/animations/block/panel/monitor/monitor.animation.json"
+}
+---- 
+but you can also parent existing variants:
+[source,json]
+----
+{
+  "target": "dalekmod:monitor",
+  "variant": "default_but_red",
+  "texture": "dalekmod:textures/block/panel/monitor/monitor.png",
+  "model": "parent:default",
+  "animation": "parent:default"
+}
+---- 
+it is done with: "parent:VARIANT_ID".
+=====
+
+.Datapack Side - Server
+[%collapsible]
+=====
+a variant can be created inside data/[id]/tardis/panel/variants/. +
+The json will look like this: +
+[source,json]
+----
+{
+  "target": "dalekmod:monitor",
+  "variants": [
+    "default"
+  ]
+}
+----
+=====
+====
+
+.**Panels with Buttons**
+[%collapsible]
+=====
+If a Panel has buttons, they must be defined inside the Panels Block class. Once they are defined, DalekMod will automaticaly calculate the hitboxes of your model, for that, the buttons must be inside a bone (folder) with the name it was defined with in the class. + 
+[source,java]
+----
+    @Override
+    public String[] getButtonIds() {
+        return new String[] {"base", "select_button", "right_button", "left_button"};
+    }
+----
+
+image::panel_buttons_bb.png[alt="Chameleon Panel as example", width=50%, height=50%]
+=====
 
 == Styling
 .**General style rules**
