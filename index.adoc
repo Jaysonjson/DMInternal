@@ -1,4 +1,4 @@
-:version: 1.21.8
+:version: 1.21.10
 = Dalek Mod {version} Internal Wiki
 Internal Stuff for Addon Creators and DM Dev Team regarding Dalek Mod Fabric {version}
 Code Sections managed by Jayson; Style/Sound Sections managed by Ginger
@@ -202,6 +202,27 @@ Layers are checked inside the TardisBlockEntities tick, to add a custom check fo
 **object** is the object to check, so either a blockId or a biomeId or a weather type (rain, snow). +
 **layer** will be the layer to apply. +
 =======
+
+.*Travel Dimensions*
+[%collapsible]
+=======
+!Dalek Mod {version} will add every dimension into the Dimension Selector and TARDIS Monitor. If you dont want a dimension inside, you can define a **blacklist.json** inside: data/[id]/tardis/travel/dimensions/blacklist.json! +
+The blacklist will look like this:
+[source,json]
+----
+[
+  "dalekmod:tardis"
+]
+---- 
+Dalek Mod {version} will automatically look for the dimension textures using their Identifiers, for example the textures for minecraft:overworld are located inside: +
+
+- assets/dalekmod/textures/dimensions/minecraft/overworld.png +
+- assets/dalekmod/textures/dimensions/minecraft/overworld_cube.png
+
+Every dimension that is defined inside data/[id]/tardis/travel/dimensions/ will be put in front of the dimension travel registry, each travel dimension also has a sortIndex variable (overworld is 0, nether is 1, etc.)
+
+=======
+
 == Panels
 
 .**Panel Variants**
