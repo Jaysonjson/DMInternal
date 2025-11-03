@@ -280,7 +280,7 @@ The json will look like this: +
 .**Panels with Buttons**
 [%collapsible]
 =====
-If a Panel has buttons, they must be defined inside the Panels Block class. Once they are defined, DalekMod will automaticaly calculate the hitboxes of your model, for that, the buttons must be inside a bone (folder) with the name it was defined with in the class. + 
+If a Panel has buttons, they must be defined inside the Panels Block class. Once they are defined, DalekMod will automaticaly calculate the hitboxes of your model, for that, the buttons must be inside a bone (folder) with the name it was defined with in the class. Every Model will also need an GeckoLib animation file, the animations must be called the same as the buttons. Those animations will be called when the button is pressed + 
 [source,java]
 ----
     @Override
