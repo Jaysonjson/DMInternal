@@ -1,4 +1,4 @@
-:version: 1.21.8
+:version: 1.21.10
 = Dalek Mod {version} Internal Wiki
 Internal Stuff for Addon Creators and DM Dev Team regarding Dalek Mod Fabric {version}
 Code Sections managed by Jayson; Style/Sound Sections managed by Ginger
@@ -202,7 +202,95 @@ Layers are checked inside the TardisBlockEntities tick, to add a custom check fo
 **object** is the object to check, so either a blockId or a biomeId or a weather type (rain, snow). +
 **layer** will be the layer to apply. +
 =======
-== Sonics
+
+.*Travel Dimensions*
+[%collapsible]
+=======
+!Dalek Mod {version} will add every dimension into the Dimension Selector and TARDIS Monitor. If you dont want a dimension inside, you can define a **blacklist.json** inside: data/[id]/tardis/travel/dimensions/blacklist.json! +
+The blacklist will look like this:
+[source,json]
+----
+[
+  "dalekmod:tardis"
+]
+---- 
+Dalek Mod {version} will automatically look for the dimension textures using their Identifiers, for example the textures for minecraft:overworld are located inside: +
+
+- assets/dalekmod/textures/dimensions/minecraft/overworld.png +
+- assets/dalekmod/textures/dimensions/minecraft/overworld_cube.png
+
+Every dimension that is defined inside data/[id]/tardis/travel/dimensions/ will be put in front of the dimension travel registry, each travel dimension also has a sortIndex variable (overworld is 0, nether is 1, etc.)
+
+=======
+
+== Panels
+
+.**Panel Variants**
+[%collapsible]
+====
+Panel Variants must be defined on the client (resourcepack) and on the server (datapack). +
+
+.Resourcepack Side - Client
+[%collapsible]
+=====
+a variant can be created inside assets/[id]/tardis/panel/variants/. +
+You can create subfolders. +
+The json will look like this: +
+[source,json]
+----
+{
+  "target": "dalekmod:monitor",
+  "variant": "default",
+  "texture": "dalekmod:textures/block/panel/monitor/monitor.png",
+  "model": "dalekmod:geckolib/block/panel/monitor/monitor.geo.json",
+  "animation": "dalekmod:geckolib/animations/block/panel/monitor/monitor.animation.json"
+}
+---- 
+but you can also parent existing variants:
+[source,json]
+----
+{
+  "target": "dalekmod:monitor",
+  "variant": "default_but_red",
+  "texture": "dalekmod:textures/block/panel/monitor/monitor.png",
+  "model": "parent:default",
+  "animation": "parent:default"
+}
+---- 
+it is done with: "parent:VARIANT_ID".
+=====
+
+.Datapack Side - Server
+[%collapsible]
+=====
+a variant can be created inside data/[id]/tardis/panel/variants/. +
+The json will look like this: +
+[source,json]
+----
+{
+  "target": "dalekmod:monitor",
+  "variants": [
+    "default"
+  ]
+}
+----
+=====
+====
+
+.**Panels with Buttons**
+[%collapsible]
+=====
+If a Panel has buttons, they must be defined inside the Panels Block class. Once they are defined, DalekMod will automaticaly calculate the hitboxes of your model, for that, the buttons must be inside a bone (folder) with the name it was defined with in the class. Every Model will also need an GeckoLib animation file, the animations must be called the same as the buttons. Those animations will be called when the button is pressed + 
+[source,java]
+----
+    @Override
+    public String[] getButtonIds() {
+        return new String[] {"base", "select_button", "right_button", "left_button"};
+    }
+----
+
+image::panel_buttons_bb.png[alt="Chameleon Panel as example", width=50%, height=50%]
+=====
 
 == Styling
 .**General style rules**
